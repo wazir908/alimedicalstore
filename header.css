@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&display=swap');
+
+/* Header container */
+.header {
+  background-color: transparent; /* Initially transparent */
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Add transition for background color */
+}
+
+/* When header is scrolled */
+.scrolled {
+  background-color: rgba(240, 240, 240, 0.95); /* Change background color when scrolled */
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  height: 4vw;
+  width: auto;
+  transition: transform 0.3s ease; /* Add transition for logo */
+}
+
+/* Site name */
+.site-name {
+  font-family: 'Kreon', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 15px;
+  background: linear-gradient(to right, #ffffff, #00bfff, #ffffff); /* Specify gradient colors */
+  -webkit-background-clip: text; /* Clip text to background shape */
+  -webkit-text-fill-color: transparent; /* Make text transparent */
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Kreon', sans-serif;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease; /* Add transition for text color */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: transparent;
+  transform: scaleX(0);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for underline */
+}
+
+nav ul li a:hover {
+  color: #00e1ff;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  background-color: #ffffff;
+}
+
+/* Primary button */
+.header-btn {
+    padding: 10px 25px;
+  margin-right: 50px;
+  background-color: #000ed9;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid transparent; /* Add border */
+  border-color: #ffffff; /* Border color */
+  cursor: pointer;
+  font-family: 'Kreon', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease; /* Add transition */
+}
+
+.header-btn:hover {
+  background-color: #000986;
+  border-color: #fff; /* Change border color on hover */
+  transform: translateY(-2px); /* Add hover effect */
+  box-shadow: 0 0 10px #ffffff; /* Add glowing effect */
+}
+
+/* Additional bar styles */
+.emergency-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ff0000; /* Change background color */
+  color: #ffffff; /* Change text color */
+}
+
+.emergency-number {
+  font-weight: bold;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+}
+
+.social-link {
+  margin-right: 10px;
+  color: #ffffff; /* Change link color */
+  text-decoration: none;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+  /* Header container */
+  .header {
+    padding: 15px 20px;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+
+  /* When header is scrolled */
+  .header.scrolled {
+    background-color: linear-gradient(to bottom, #000289, #000000);
+  }
+
+  /* Logo */
+  .logo-container {
+    text-align: center;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  /* Menu icon */
+  .menu-icon {
+    display: none;
+  }
+
+  /* Menu */
+  .header__nav__menu {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  /* Menu items */
+  .header__nav__menu ul li {
+    margin: 10px 0;
+    display: inline-block;
+  }
+
+  /* Menu item links */
+  .header__nav__menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+
+  /* Show menu when menu icon is clicked */
+  .menu-icon:checked + .header__nav__menu {
+    display: block;
+  }
+}
+
+/* Mobile tab bar */
+.mobile-tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #00026c, #000000);
+    z-index: 999;
+    animation: slideIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .mobile-tab-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .mobile-tab-bar li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .mobile-tab-bar a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  .mobile-tab-bar a:hover {
+    transform: translateY(-8px);
+    background-color: transparent;
+    color: #000;
+  }
+  
+  .mobile-tab-bar a span {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: auto;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .mobile-tab-bar a.active span {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -20px);
+  }
+  
+  .mobile-tab-bar a:hover:not(.active) span {
+    display: none;
+  }
+  
+  /* Adjust icon size */
+  .mobile-tab-bar svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    transition: transform 0.4s ease, fill 0.4s ease;
+  }
+  
+  .mobile-tab-bar a:hover svg {
+    transform: scale(1.2);
+    animation: pulse 1s infinite alternate;
+  }
+  
+  /* Pulsating animation for icon */
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Hide the card */
+  .mobile-tab-bar .card {
+    display: none;
+  }

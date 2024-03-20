@@ -1,0 +1,99 @@
+/* Base styles for desktop */
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    font-family: 'Kreon', sans-serif; /* Using Kreon font */
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    margin-left: 60px; /* Adjust as needed */
+    color: white; /* Text color */
+}
+
+.hero-subtitle {
+    margin-top: 20px; /* Adjust as needed */
+    text-align: left;
+}
+
+/* Button Styles */
+.learn-more,
+.primary-button {
+    padding: 10px 25px;
+  background-color: #000ed9;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid transparent; /* Add border */
+  border-color: #ffffff; /* Border color */
+  cursor: pointer;
+  font-family: 'Kreon', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease; /* Add transition */
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.learn-more:before,
+.primary-button:before {
+    background-color: #000986;
+    border-color: #fff; /* Change border color on hover */
+    transform: translateY(-2px); /* Add hover effect */
+    box-shadow: 0 0 10px #ffffff; /* Add glowing effect */
+}
+
+.learn-more:hover:before,
+.primary-button:hover:before {
+    width: 0;
+    height: 0;
+}
+
+.learn-more span,
+.primary-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.learn-more:hover,
+.primary-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    .landing-page {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .content {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+}

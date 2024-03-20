@@ -1,0 +1,71 @@
+.about-us-container {
+    width: 80%;
+    padding: 20px;
+}
+
+.about-us-content {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-us-image {
+    flex: 1;
+    max-width: 30%; /* Adjust the width as needed */
+    animation: slideInLeft 1s ease;
+}
+
+.about-us-text {
+    flex: 1;
+    animation: slideInRight 1s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Additional styling for text and button */
+.about-us-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-us-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.about-us-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about-us-button:hover {
+    background-color: #0056b3;
+}
